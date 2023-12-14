@@ -1,0 +1,262 @@
+@import "Variables/StyleVariables"
+
+*, *:before, *:after
+  padding: 0
+  margin: 0
+  box-sizing: border-box
+
+::-webkit-scrollbar
+  width: 0
+  height: 0
+
+html
+  font-family: $mainFont, sans-serif
+  font-size: 100%
+  background: $mieleWhite
+
+body
+  position: absolute
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+  min-height: 100vh
+  min-width: 100vw
+  scroll-behavior: smooth
+  overflow-x: hidden
+  font-family: $mainFont, sans-serif
+  background: $mieleWhite
+
+h1
+  @include h-styles(3, 1.5, 700)
+  text-transform: uppercase
+
+h2
+  @include h-styles(2.5, 1.25, 700)
+
+h3
+  @include h-styles(2, 1, 500)
+
+h4
+  @include h-styles(1.5, .75, 500)
+
+h5
+  @include h-styles(1, .5, 300)
+
+small
+  @include h-styles(.5, .25, 300)
+
+a
+  color: white
+  text-decoration: none
+
+div[id*='Screen']
+  display: flex
+  flex-direction: column
+  margin-top: calc($index * 3)
+
+header
+  @include headers(3, rgba($mieleBlack, 1), $mieleWhite, fixed)
+  backdrop-filter: blur(5px)
+
+footer
+  @include footers(5, $mieleBlack, $mieleWhite)
+
+header
+  .container
+    @include containers(100%, 100%, .5, 2.5)
+    flex-direction: row
+    justify-content: space-between
+
+    img
+      @include images(2, 0, 0)
+
+    nav
+      height: 100%
+      display: flex
+      flex-direction: row
+      border: none
+      gap: 0 calc($index * 2)
+
+      button
+        @include buttons(inherit, $mieleWhite, .6, 0, 1)
+        font-weight: 500
+
+    a
+      @include links(2, .5, 1.5, $mieleRed, $mieleWhite)
+      border: calc($index * .1) solid $mieleRed
+      font-weight: 700
+
+footer
+  .container
+    @include containers(100%, 100%, .5, 5)
+    flex-direction: row
+
+.container
+  .advantages
+    display: flex
+    justify-content: space-between
+    flex-direction: row
+    position: absolute
+    bottom: calc($index * 0)
+    translate: 0 50%
+    padding: calc($index * .5) calc($index * .5)
+    background: $mieleWhite
+    color: $mieleBlack
+    border-radius: calc($index * 1)
+    transition-duration: $transitionDuration
+    transition-timing-function: $transitionTimingFunction
+    -webkit-box-shadow: 0 calc($index * .25) calc($index * 1) 0 rgba($mieleBlack, .25)
+    -moz-box-shadow: 0 calc($index * .25) calc($index * 1) 0 rgba($mieleBlack, .25)
+    box-shadow: 0 calc($index * .25) calc($index * 1) 0 rgba($mieleBlack, .25)
+    gap: calc($index * 0) calc($index * .5)
+    &:hover
+      .advantage
+        border-radius: calc($index * .5)
+
+    h5
+      display: flex
+      flex-direction: column
+      align-items: start
+      padding: calc($index * 1)
+      span:first-child
+        color: $mieleRed
+
+    .advantage
+      width: calc($index * 10)
+      //border: calc($index * .1) solid $mieleBlack
+      border-radius: calc($index * .5)
+      strong
+        display: flex
+        width: 100%
+        padding: calc($index * .5)
+        //border-bottom: calc($index * .1) dashed rgba($mieleBlack, 1)
+        justify-content: center
+        transition-duration: $transitionDuration
+        transition-timing-function: $transitionTimingFunction
+      img
+        @include images(2.5, 0, 0)
+        margin-top: calc($index * 1)
+        color: $mieleRed
+        filter: invert(7%) sepia(5%) saturate(372%) hue-rotate(314deg) brightness(89%) contrast(86%)
+        transition-duration: $transitionDuration
+        transition-timing-function: $transitionTimingFunction
+      p
+        width: 100%
+        padding: calc($index * .5) calc($index * .5) calc($index * 0) calc($index * .5)
+        display: flex
+        flex-wrap: wrap
+        transition-duration: $transitionDuration
+        transition-timing-function: $transitionTimingFunction
+      &:hover
+        strong
+          color: $mieleRed
+          //border-bottom: calc($index * .1) dashed rgba($mieleRed, 1)
+        p
+          color: $mieleRed
+        img
+          filter: invert(23%) sepia(31%) saturate(6044%) hue-rotate(327deg) brightness(86%) contrast(91%)
+
+  .item
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-direction: column
+    width: 50%
+    text-transform: uppercase
+
+    img
+      @include images(17.5, 0, 0)
+
+    .call-btn
+      @include links(2, 1, 5, $mieleRed, $mieleWhite)
+      border: calc($index * .1) solid $mieleRed
+      margin-bottom: calc($index * 5)
+
+      i
+        margin-left: calc($index * .5)
+
+    .container
+      @include containers(calc($index * 25), calc($index * 4.5), 0, 0)
+      border-radius: 0 calc($index * 3) calc($index * 3) 0
+      background: rgba($mieleWhite, .1)
+      justify-content: space-between
+      font-size: calc($index * 1)
+      margin-bottom: calc($index * 2)
+
+      a
+        @include links(100%, 0, 1, transparrent, $mieleWhite)
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        gap: calc($index * .5) calc($index * 0)
+
+        span
+          transition-duration: $transitionDuration
+          transition-timing-function: $transitionTimingFunction
+
+        &:hover
+          color: $mieleWhite
+          span:first-child
+            color: $mieleWhite
+          span:nth-child(2)
+            color: $mieleRed
+          #whatsApp
+            color: #32d750
+          #telegram
+            color: #409ed7
+
+        i
+          transition-duration: $transitionDuration
+          transition-timing-function: $transitionTimingFunction
+          font-size: calc($index * 2.5)
+          border-radius: 50%
+
+        &:first-child
+          border-right: calc($index * .1) dashed rgba($mieleWhite, .25)
+          border-radius: 0
+
+        &:first-child:hover
+          color: $mieleWhite
+
+section
+  @include sections($mieleBlack, $mieleWhite, .5, .5)
+  position: relative
+
+  &:first-child
+    &:before
+      content: ''
+      position: absolute
+      background-image: url($mieleBackground)
+      background-size: cover
+      background-repeat: no-repeat
+      background-position: 50% 50%
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      z-index: 1
+      filter: grayscale(100%) blur(1px)
+      opacity: .5
+
+  &:nth-child(2)
+    padding-top: calc($index * 5)
+
+  *, *:before, *:after
+    z-index: 2
+
+  .container
+    @include containers(100%, 100%, 0, 0)
+    flex-direction: row
+
+  .appliances
+    width: 100%
+    display: grid
+    justify-content: center
+    align-items: center
+    border: calc($index * .1) solid $mieleRed
+    grid-template-columns: repeat(1, 100%)
+
+    .container
+      @include containers(100%, calc($index * 10), 0, 0)
+      border: calc($index * .1) solid $mieleRed

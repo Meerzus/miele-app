@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:700|Montserrat:400')
+
+$index: calc(1vw + 1vh)
+$mieleBlack: rgb(31, 31, 31)
+$mieleLightBlack: rgb(35, 35, 35)
+$mieleRed: rgb(190, 38, 76)
+$mieleLightRed: rgb(185, 67, 98)
+$mieleWhite: rgb(249, 250, 244)
+$mieleDarkWhite: rgb(245, 245, 220)
+$transitionDuration: 1s
+$transitionTimingFunction: cubic-bezier(.2, .5, 0, 1)
+$mainFont: 'Montserrat'
+$mieleBackground: '\Images/MieleBackground.jpg'
+
+@mixin headers($heightMultiplier, $bgColor, $color, $position)
+  display: flex
+  width: 100vw
+  height: calc($index * $heightMultiplier)
+  background-color: $bgColor
+  position: $position
+  color: $color
+  z-index: 9999
+
+  @if ($position == 'fixed')
+    top: 0
+  @if ($position == 'absolute')
+    top: 0
+
+@mixin footers($heightMultiplier, $bgColor, $color)
+  display: flex
+  width: 100vw
+  height: calc($index * $heightMultiplier)
+  background-color: $bgColor
+  color: $color
+  z-index: 9999
+
+@mixin h-styles($sizeMultiplier, $marginMultiplier, $fontWeight)
+  display: flex
+  justify-content: center
+  align-items: center
+  text-align: center
+  font-size: calc($index * $sizeMultiplier)
+  font-weight: $fontWeight
+  margin: calc($index * $marginMultiplier) calc($index * 0)
+  text-decoration: none
+
+@mixin containers($width, $height, $paddingVertical, $paddingHorizontal)
+  display: flex
+  justify-content: center
+  align-items: center
+  width: $width
+  height: $height
+  padding: calc($index * $paddingVertical) calc($index * $paddingHorizontal)
+
+@mixin images($heightMultiplier, $paddingVertical, $paddingHorizontal)
+  width: auto
+  height: calc($index * $heightMultiplier)
+  max-height: 100%
+  max-width: 100%
+  padding: calc($index * $paddingVertical) calc($index * $paddingHorizontal)
+
+@mixin buttons($bgColor, $color, $fontSizeMultiplier, $paddingVertical, $paddingHorizontal)
+  background-color: $bgColor
+  color: $color
+  font-size: calc($index * $fontSizeMultiplier)
+  font-family: $mainFont, sans-serif
+  padding: calc($index * $paddingVertical) calc($index * $paddingHorizontal)
+  cursor: pointer
+  border: calc($index * .1) solid transparent
+  transition-duration: $transitionDuration
+  transition-timing-function: $transitionTimingFunction
+
+  &:hover
+    background-color: transparent
+    color: $mieleRed
+    border: calc($index * .1) solid $mieleRed
+    border-radius: calc($index * .5)
+
+@mixin links($height, $paddingVertical, $paddingHorizontal, $bgColor, $color)
+  display: flex
+  justify-content: center
+  align-items: center
+  height: $height
+  padding: calc($index * $paddingVertical) calc($index * $paddingHorizontal)
+  background-color: $bgColor
+  color: $color
+  transition-duration: $transitionDuration
+  transition-timing-function: $transitionTimingFunction
+  cursor: pointer
+  border-radius: calc($index * .25)
+
+  &:hover
+    background-color: transparent
+    color: $mieleRed
+    border-radius: calc($index * .5)
+
+@mixin sections($bgColor, $color, $paddingVertical, $paddingHorizontal)
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  text-align: center
+  background: $bgColor
+  color: $color
+  padding: calc($index * $paddingVertical) calc($index * $paddingHorizontal)
+  transition-duration: $transitionDuration
+  transition-timing-function: $transitionTimingFunction
+
+  &:nth-child(2n)
+    background: $color
+    color: $bgColor
+    padding: calc($index * $paddingVertical) calc($index * $paddingHorizontal * 25)
