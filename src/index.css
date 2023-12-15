@@ -397,6 +397,34 @@ section:nth-child(2n) {
   color: rgb(31, 31, 31);
   padding: calc((1vw + 1vh) * 0.5) calc((1vw + 1vh) * 0.5 * 25);
 }
+section .lines {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  transition-duration: 1s;
+  transition-timing-function: cubic-bezier(0.2, 0.5, 0, 1);
+}
+section .lines hr:first-child {
+  height: calc((1vw + 1vh) * 0.25);
+  width: 1%;
+  color: rgb(190, 38, 76);
+  fill: rgb(190, 38, 76);
+  background: rgb(190, 38, 76);
+  border: none;
+  transition-duration: 1s;
+  transition-timing-function: cubic-bezier(0.2, 0.5, 0, 1);
+}
+section .lines hr:last-child {
+  height: calc((1vw + 1vh) * 0.25);
+  width: 98%;
+  color: rgb(190, 38, 76);
+  fill: rgb(190, 38, 76);
+  background: rgb(190, 38, 76);
+  border: none;
+  transition-duration: 1s;
+  transition-timing-function: cubic-bezier(0.2, 0.5, 0, 1);
+}
 section:first-child:before {
   content: "";
   position: absolute;
@@ -429,20 +457,36 @@ section .container {
 }
 section .appliances {
   width: 100%;
+  min-height: 80vh;
   display: grid;
-  justify-content: center;
+  position: sticky;
+  top: calc((1vw + 1vh) * 3.75);
+  grid-auto-flow: column;
+  grid-auto-columns: 100%;
+  gap: calc((1vw + 1vh) * 0) 2.5%;
+  justify-content: space-between;
+  overflow-x: auto;
   align-items: center;
+  scroll-snap-type: inline mandatory;
+  padding: calc((1vw + 1vh) * 0) 5% calc((1vw + 1vh) * 0) 5%;
+  margin-top: calc((1vw + 1vh) * 1);
   border: calc((1vw + 1vh) * 0.1) solid rgb(190, 38, 76);
-  grid-template-columns: repeat(1, 100%);
 }
-section .appliances .container {
+section .appliances .appliance {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: calc((1vw + 1vh) * 10);
+  height: 80vh;
   padding: calc((1vw + 1vh) * 0) calc((1vw + 1vh) * 0);
-  border: calc((1vw + 1vh) * 0.1) solid rgb(190, 38, 76);
+  border: calc((1vw + 1vh) * 0.1) solid rgb(31, 31, 31);
+  border-radius: calc((1vw + 1vh) * 0.5);
+  scroll-snap-align: center;
+}
+
+#appliances .container {
+  justify-content: left;
+  align-items: start;
 }
 
 /*# sourceMappingURL=index.css.map */

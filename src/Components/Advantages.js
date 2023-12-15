@@ -8,7 +8,7 @@ function Advantages({data}) {
                 <span>ПРЕИМУЩЕСТВА</span>
             </h5>
             {data.advantages.map((advantage) => {
-                return <div className='advantage'>
+                return <div className='advantage' key={advantage.id}>
                     <strong>{advantage.name}</strong>
                     <img src={advantage.icon} alt={advantage.name}/>
                     <p>{advantage.description}</p>

@@ -223,6 +223,35 @@ section
   @include sections($mieleBlack, $mieleWhite, .5, .5)
   position: relative
 
+  .lines
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    width: 100%
+    transition-duration: $transitionDuration
+    transition-timing-function: $transitionTimingFunction
+
+    hr:first-child
+      height: calc($index * .25)
+      width: 1%
+      color: $mieleRed
+      fill: $mieleRed
+      background: $mieleRed
+      border: none
+      transition-duration: $transitionDuration
+      transition-timing-function: $transitionTimingFunction
+
+    hr:last-child
+      height: calc($index * .25)
+      width: 98%
+      color: $mieleRed
+      fill: $mieleRed
+      background: $mieleRed
+      border: none
+      transition-duration: $transitionDuration
+      transition-timing-function: $transitionTimingFunction
+
+
   &:first-child
     &:before
       content: ''
@@ -251,12 +280,31 @@ section
 
   .appliances
     width: 100%
+    min-height: 80vh
     display: grid
-    justify-content: center
+    position: sticky
+    top: calc($index * 3.75)
+    grid-auto-flow: column
+    grid-auto-columns: 100%
+    gap: calc($index * 0) 2.5%
+    justify-content: space-between
+    overflow-x: auto
+    //overscroll-behavior: contain
     align-items: center
+    scroll-snap-type: inline mandatory
+    padding: calc($index * 0) 5% calc($index * 0) 5%
+    //grid-template-columns: repeat(1, 100%)
+    margin-top: calc($index * 1)
     border: calc($index * .1) solid $mieleRed
-    grid-template-columns: repeat(1, 100%)
 
-    .container
-      @include containers(100%, calc($index * 10), 0, 0)
-      border: calc($index * .1) solid $mieleRed
+    .appliance
+      @include containers(100%, 80vh, 0, 0)
+      border: calc($index * .1) solid $mieleBlack
+      border-radius: calc($index * .5)
+      scroll-snap-align: center
+      //margin: calc($index * 0) calc($index * 1) calc($index * 0) calc($index * 0)
+
+#appliances
+  .container
+    justify-content: left
+    align-items: start
