@@ -1,5 +1,5 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 import {motion} from 'framer-motion'
 
 import {verticalAppearance, transition} from "../Variables/animations";
@@ -9,7 +9,7 @@ import {tab} from "@testing-library/user-event/dist/tab";
 
 function Header() {
 
-
+    const navigate = useNavigate()
 
     return (
         <header>
@@ -25,7 +25,7 @@ function Header() {
                             staggerChildren: .2,
                         }}
             >
-                <motion.img variants={verticalAppearance} src={require('../Images/MieleLogo.png')} alt=""/>
+                <motion.img variants={verticalAppearance} src={require('../Images/MieleLogo.png')} alt="" onClick={() => navigate('/')}/>
                 <nav>
                     <motion.button onClick={() => navigateTo('')} variants={verticalAppearance}>
                         Виды техники</motion.button>
