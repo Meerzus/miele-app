@@ -26,7 +26,8 @@ body
   scroll-behavior: smooth
   overflow-x: hidden
   font-family: $mainFont, sans-serif
-  background: $mieleWhite
+  background: $mieleBlack
+  //background: $mieleWhite
 
 h1
   @include h-styles(3, 1.5, 700)
@@ -61,7 +62,7 @@ div[id*='Screen']
   margin-top: calc($index * 3)
 
 header
-  @include headers(3, rgba($mieleBlack, .9), $mieleWhite, fixed)
+  @include headers(3, rgba($mieleBlack, .75), $mieleWhite, fixed)
   backdrop-filter: blur(5px)
 
 footer
@@ -227,7 +228,7 @@ footer
           color: $mieleWhite
 
 section
-  @include sections($mieleBlack, $mieleWhite, .5, .5)
+  @include sections($mieleBlack, $mieleWhite, 1, .5)
   position: relative
 
   .lines
@@ -237,6 +238,7 @@ section
     width: 100%
     transition-duration: $transitionDuration
     transition-timing-function: $transitionTimingFunction
+    margin: 0 0 calc($index * 1) 0
 
     hr:first-child
       height: calc($index * .25)
@@ -293,7 +295,7 @@ section
     align-items: center
     scroll-snap-type: inline mandatory
     padding: calc($index * 0) 5% calc($index * 0) 5%
-    margin-top: calc($index * 1)
+    //margin-top: calc($index * 1)
     border: calc($index * .1) solid $mieleRed
 
     .appliance
@@ -315,7 +317,7 @@ section
     grid-template-columns: repeat(3, 32%)
     gap: calc($index * 1) 2%
     //border: calc($index * .1) solid $mieleRed
-    margin-top: calc($index * 1)
+    //margin: calc($index * 1) 0 0 0
     //padding: calc($index * 1)
 
     .service-card
@@ -400,8 +402,8 @@ section
           @include links(calc($index * 2), .5, 1.5, $mieleRed, $mieleWhite)
           border: calc($index * .1) solid $mieleRed
           i
-            transition-duration: inherit
-            transition-timing-function: inherit
+            transition-duration: calc($transitionDuration - .9s)
+            transition-timing-function: $transitionTimingFunction
             margin-left: calc($index * .25)
           &:hover i
             margin-left: calc($index * .5)
@@ -413,3 +415,162 @@ section
             width: 100%
             height: 75%
             object-fit: cover
+  .guarantees
+    display: flex
+    flex-direction: row
+    width: 100%
+    //border: calc($index * .1) solid $mieleRed
+    justify-content: center
+    //margin-bottom: calc($index * 1)
+    .guarantee
+      //border: calc($index * .1) solid $mieleRed
+      padding: 0 calc($index * 2.5)
+      display: flex
+      flex-direction: column
+      width: 30%
+      img
+        @include images(5, .1, .1)
+        color: $mieleRed
+        filter: invert(23%) sepia(31%) saturate(6044%) hue-rotate(327deg) brightness(86%) contrast(91%)
+        object-fit: contain
+        transition-duration: $transitionDuration
+        transition-timing-function: $transitionTimingFunction
+      h5
+        color: $mieleRed
+        transition-duration: $transitionDuration
+        transition-timing-function: $transitionTimingFunction
+        //border: calc($index * .1) solid $mieleRed
+        height: calc($index * 2.5)
+      p
+        transition-duration: $transitionDuration
+        transition-timing-function: $transitionTimingFunction
+      &:hover img
+        filter: invert(35%) sepia(18%) saturate(2010%) hue-rotate(294deg) brightness(98%) contrast(92%)
+      &:hover h5
+        color: $mieleLightRed
+      &:hover p
+        color: $mieleDarkWhite
+
+#team
+  align-items: center
+  .team
+    display: flex
+    flex-direction: row
+    width: 100%
+    justify-content: space-between
+    .team-card
+      //border: calc($index * .1) solid $mieleRed
+      display: flex
+      flex-direction: column
+      align-items: start
+      h5
+        transition-duration: $transitionDuration
+        transition-timing-function: $transitionTimingFunction
+      img
+        @include images(10, 0, 0)
+        width:  calc($index * 10)
+        border-radius: calc($index * .25)
+        object-fit: cover
+        transition-duration: $transitionDuration
+        transition-timing-function: $transitionTimingFunction
+      &:hover img
+        border-radius: calc($index * .5)
+      &:hover h5
+        color: $mieleRed
+
+#map
+  .contact
+    display: flex
+    flex-direction: row
+    margin-top: calc($index * 1)
+    width: 100%
+    //border: calc($index * .1) solid $mieleRed
+    justify-content: center
+    align-items: center
+    .item
+      display: flex
+      flex-direction: column
+      width: 30%
+      //border: calc($index * .1) solid $mieleRed
+      padding: 0 calc($index * 5)
+      &:nth-child(2)
+        width: 40%
+        padding: 0 0 0 calc($index * 3)
+        p
+          text-align: left
+        .contact-us
+          display: flex
+          flex-direction: row
+          width: 100%
+          margin-top: calc($index * 1)
+          input
+            width: 100%
+            border: calc($index * .1) solid $mieleRed
+            border-right: none
+            padding: calc($index * .5) calc($index * 1)
+            font-size: calc($index * .75)
+            border-radius: calc($index * .25) 0 0 calc($index * .25)
+            transition-duration: $transitionDuration
+            transition-timing-function: $transitionTimingFunction
+            &:hover
+              border-radius: calc($index * .5) 0 0 calc($index * .5)
+          button
+            @include buttons($mieleRed, $mieleWhite, .6, 0, 1)
+            border-radius: 0 calc($index * .25) calc($index * .25) 0
+            &:hover
+              border-radius: 0 calc($index * .5) calc($index * .5) 0
+  .item
+    display: flex
+    flex-direction: column
+    height: 100%
+    width: 40%
+    padding: 0 calc($index * 1)
+    &:nth-child(2)
+      width: 60%
+      //border: calc($index * .1) solid $mieleRed
+    h4
+      margin-bottom: calc($index * 1)
+    a
+      display: flex
+      width: 95%
+      text-align: left
+      align-items: center
+      align-content: center
+      margin-bottom: calc($index * .5)
+      transition-duration: $transitionDuration
+      transition-timing-function: $transitionTimingFunction
+      &:last-child
+        margin-bottom: calc($index * 0)
+      &:hover
+        color: $mieleRed
+    i
+      font-size: calc($index * 1)
+      color: $mieleRed
+      margin-right: calc($index * .5)
+    #whatsApp
+      font-size: calc($index * 1.15)
+
+  [class*="copyrights-pane"]
+    display: none !important
+
+input::-webkit-outer-spin-button
+  -webkit-appearance: none
+  margin: 0
+input::-webkit-inner-spin-button
+  -webkit-appearance: none
+  margin: 0
+input[type=number]
+  -moz-appearance: textfield
+
+#miele-description
+  display: flex
+  flex-direction: column
+  text-align: left
+  justify-content: start
+  align-items: start
+  ul
+    transform: translateX(calc($index * 1))
+  li
+    margin-bottom: calc($index * .5)
+  p
+    margin-bottom: calc($index * 1)

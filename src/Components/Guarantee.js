@@ -1,8 +1,12 @@
 import React from 'react';
 
-function Guarantee(props) {
+function Guarantee({data}) {
     return (
-        <div></div>
+        <div className='guarantee'>
+            <img src={data.icon} alt={data.name}/>
+            <h5>{data.name}</h5>
+            <p>{data.description}</p>
+        </div>
     );
 }
 

@@ -28,7 +28,7 @@ body {
   scroll-behavior: smooth;
   overflow-x: hidden;
   font-family: "Montserrat", sans-serif;
-  background: rgb(249, 250, 244);
+  background: rgb(31, 31, 31);
 }
 
 h1 {
@@ -124,7 +124,7 @@ header {
   display: flex;
   width: 100vw;
   height: calc((1vw + 1vh) * 3);
-  background-color: rgba(31, 31, 31, 0.9);
+  background-color: rgba(31, 31, 31, 0.75);
   position: fixed;
   color: rgb(249, 250, 244);
   z-index: 9999;
@@ -401,7 +401,7 @@ section {
   text-align: center;
   background: rgb(31, 31, 31);
   color: rgb(249, 250, 244);
-  padding: calc((1vw + 1vh) * 0.5) calc((1vw + 1vh) * 0.5);
+  padding: calc((1vw + 1vh) * 1) calc((1vw + 1vh) * 0.5);
   transition-duration: 1s;
   transition-timing-function: cubic-bezier(0.2, 0.5, 0, 1);
   position: relative;
@@ -409,7 +409,7 @@ section {
 section:nth-child(2n) {
   background: rgb(249, 250, 244);
   color: rgb(31, 31, 31);
-  padding: calc((1vw + 1vh) * 0.5) calc((1vw + 1vh) * 0.5 * 25);
+  padding: calc((1vw + 1vh) * 1) calc((1vw + 1vh) * 0.5 * 25);
 }
 section .lines {
   display: flex;
@@ -418,6 +418,7 @@ section .lines {
   width: 100%;
   transition-duration: 1s;
   transition-timing-function: cubic-bezier(0.2, 0.5, 0, 1);
+  margin: 0 0 calc((1vw + 1vh) * 1) 0;
 }
 section .lines hr:first-child {
   height: calc((1vw + 1vh) * 0.25);
@@ -477,7 +478,6 @@ section .appliances {
   align-items: center;
   scroll-snap-type: inline mandatory;
   padding: calc((1vw + 1vh) * 0) 5% calc((1vw + 1vh) * 0) 5%;
-  margin-top: calc((1vw + 1vh) * 1);
   border: calc((1vw + 1vh) * 0.1) solid rgb(190, 38, 76);
 }
 section .appliances .appliance {
@@ -503,7 +503,6 @@ section .appliances .appliance {
   justify-content: start;
   grid-template-columns: repeat(3, 32%);
   gap: calc((1vw + 1vh) * 1) 2%;
-  margin-top: calc((1vw + 1vh) * 1);
 }
 #appliances .services .service-card {
   display: flex;
@@ -620,8 +619,8 @@ section .appliances .appliance {
   border-radius: calc((1vw + 1vh) * 0.5);
 }
 #faq .container .faq-item .container a i {
-  transition-duration: inherit;
-  transition-timing-function: inherit;
+  transition-duration: 0.1s;
+  transition-timing-function: cubic-bezier(0.2, 0.5, 0, 1);
   margin-left: calc((1vw + 1vh) * 0.25);
 }
 #faq .container .faq-item .container a:hover i {
@@ -635,6 +634,219 @@ section .appliances .appliance {
   width: 100%;
   height: 75%;
   object-fit: cover;
+}
+#faq .guarantees {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+}
+#faq .guarantees .guarantee {
+  padding: 0 calc((1vw + 1vh) * 2.5);
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+}
+#faq .guarantees .guarantee img {
+  width: auto;
+  height: calc((1vw + 1vh) * 5);
+  max-height: 100%;
+  max-width: 100%;
+  padding: calc((1vw + 1vh) * 0.1) calc((1vw + 1vh) * 0.1);
+  color: rgb(190, 38, 76);
+  filter: invert(23%) sepia(31%) saturate(6044%) hue-rotate(327deg) brightness(86%) contrast(91%);
+  object-fit: contain;
+  transition-duration: 1s;
+  transition-timing-function: cubic-bezier(0.2, 0.5, 0, 1);
+}
+#faq .guarantees .guarantee h5 {
+  color: rgb(190, 38, 76);
+  transition-duration: 1s;
+  transition-timing-function: cubic-bezier(0.2, 0.5, 0, 1);
+  height: calc((1vw + 1vh) * 2.5);
+}
+#faq .guarantees .guarantee p {
+  transition-duration: 1s;
+  transition-timing-function: cubic-bezier(0.2, 0.5, 0, 1);
+}
+#faq .guarantees .guarantee:hover img {
+  filter: invert(35%) sepia(18%) saturate(2010%) hue-rotate(294deg) brightness(98%) contrast(92%);
+}
+#faq .guarantees .guarantee:hover h5 {
+  color: rgb(185, 67, 98);
+}
+#faq .guarantees .guarantee:hover p {
+  color: rgb(236, 232, 225);
+}
+
+#team {
+  align-items: center;
+}
+#team .team {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+}
+#team .team .team-card {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+#team .team .team-card h5 {
+  transition-duration: 1s;
+  transition-timing-function: cubic-bezier(0.2, 0.5, 0, 1);
+}
+#team .team .team-card img {
+  width: auto;
+  height: calc((1vw + 1vh) * 10);
+  max-height: 100%;
+  max-width: 100%;
+  padding: calc((1vw + 1vh) * 0) calc((1vw + 1vh) * 0);
+  width: calc((1vw + 1vh) * 10);
+  border-radius: calc((1vw + 1vh) * 0.25);
+  object-fit: cover;
+  transition-duration: 1s;
+  transition-timing-function: cubic-bezier(0.2, 0.5, 0, 1);
+}
+#team .team .team-card:hover img {
+  border-radius: calc((1vw + 1vh) * 0.5);
+}
+#team .team .team-card:hover h5 {
+  color: rgb(190, 38, 76);
+}
+
+#map .contact {
+  display: flex;
+  flex-direction: row;
+  margin-top: calc((1vw + 1vh) * 1);
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+#map .contact .item {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  padding: 0 calc((1vw + 1vh) * 5);
+}
+#map .contact .item:nth-child(2) {
+  width: 40%;
+  padding: 0 0 0 calc((1vw + 1vh) * 3);
+}
+#map .contact .item:nth-child(2) p {
+  text-align: left;
+}
+#map .contact .item:nth-child(2) .contact-us {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-top: calc((1vw + 1vh) * 1);
+}
+#map .contact .item:nth-child(2) .contact-us input {
+  width: 100%;
+  border: calc((1vw + 1vh) * 0.1) solid rgb(190, 38, 76);
+  border-right: none;
+  padding: calc((1vw + 1vh) * 0.5) calc((1vw + 1vh) * 1);
+  font-size: calc((1vw + 1vh) * 0.75);
+  border-radius: calc((1vw + 1vh) * 0.25) 0 0 calc((1vw + 1vh) * 0.25);
+  transition-duration: 1s;
+  transition-timing-function: cubic-bezier(0.2, 0.5, 0, 1);
+}
+#map .contact .item:nth-child(2) .contact-us input:hover {
+  border-radius: calc((1vw + 1vh) * 0.5) 0 0 calc((1vw + 1vh) * 0.5);
+}
+#map .contact .item:nth-child(2) .contact-us button {
+  background-color: rgb(190, 38, 76);
+  color: rgb(249, 250, 244);
+  font-size: calc((1vw + 1vh) * 0.6);
+  font-family: "Montserrat", sans-serif;
+  padding: calc((1vw + 1vh) * 0) calc((1vw + 1vh) * 1);
+  cursor: pointer;
+  border: calc((1vw + 1vh) * 0.1) solid transparent;
+  transition-duration: 1s;
+  transition-timing-function: cubic-bezier(0.2, 0.5, 0, 1);
+  border-radius: 0 calc((1vw + 1vh) * 0.25) calc((1vw + 1vh) * 0.25) 0;
+}
+#map .contact .item:nth-child(2) .contact-us button:hover {
+  background-color: transparent;
+  color: rgb(190, 38, 76);
+  border: calc((1vw + 1vh) * 0.1) solid rgb(190, 38, 76);
+  border-radius: calc((1vw + 1vh) * 0.5);
+}
+#map .contact .item:nth-child(2) .contact-us button:hover {
+  border-radius: 0 calc((1vw + 1vh) * 0.5) calc((1vw + 1vh) * 0.5) 0;
+}
+#map .item {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 40%;
+  padding: 0 calc((1vw + 1vh) * 1);
+}
+#map .item:nth-child(2) {
+  width: 60%;
+}
+#map .item h4 {
+  margin-bottom: calc((1vw + 1vh) * 1);
+}
+#map .item a {
+  display: flex;
+  width: 95%;
+  text-align: left;
+  align-items: center;
+  align-content: center;
+  margin-bottom: calc((1vw + 1vh) * 0.5);
+  transition-duration: 1s;
+  transition-timing-function: cubic-bezier(0.2, 0.5, 0, 1);
+}
+#map .item a:last-child {
+  margin-bottom: calc((1vw + 1vh) * 0);
+}
+#map .item a:hover {
+  color: rgb(190, 38, 76);
+}
+#map .item i {
+  font-size: calc((1vw + 1vh) * 1);
+  color: rgb(190, 38, 76);
+  margin-right: calc((1vw + 1vh) * 0.5);
+}
+#map .item #whatsApp {
+  font-size: calc((1vw + 1vh) * 1.15);
+}
+#map [class*=copyrights-pane] {
+  display: none !important;
+}
+
+input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+#miele-description {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  justify-content: start;
+  align-items: start;
+}
+#miele-description ul {
+  transform: translateX(calc((1vw + 1vh) * 1));
+}
+#miele-description li {
+  margin-bottom: calc((1vw + 1vh) * 0.5);
+}
+#miele-description p {
+  margin-bottom: calc((1vw + 1vh) * 1);
 }
 
 /*# sourceMappingURL=index.css.map */

@@ -20,7 +20,6 @@ $mieleBackground: '\Images/MieleBackground.jpg'
   position: $position
   color: $color
   z-index: 9999
-
   @if ($position == 'fixed')
     top: 0
   @if ($position == 'absolute')
@@ -70,7 +69,6 @@ $mieleBackground: '\Images/MieleBackground.jpg'
   border: calc($index * .1) solid transparent
   transition-duration: $transitionDuration
   transition-timing-function: $transitionTimingFunction
-
   &:hover
     background-color: transparent
     color: $mieleRed
@@ -89,7 +87,6 @@ $mieleBackground: '\Images/MieleBackground.jpg'
   transition-timing-function: $transitionTimingFunction
   cursor: pointer
   border-radius: calc($index * .25)
-
   &:hover
     background-color: transparent
     color: $mieleRed
@@ -106,7 +103,6 @@ $mieleBackground: '\Images/MieleBackground.jpg'
   padding: calc($index * $paddingVertical) calc($index * $paddingHorizontal)
   transition-duration: $transitionDuration
   transition-timing-function: $transitionTimingFunction
-
   &:nth-child(2n)
     background: $color
     color: $bgColor
