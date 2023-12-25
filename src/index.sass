@@ -50,6 +50,10 @@ small
 a
   color: white
   text-decoration: none
+  text-transform: uppercase
+
+button
+  text-transform: uppercase
 
 div[id*='Screen']
   display: flex
@@ -57,7 +61,7 @@ div[id*='Screen']
   margin-top: calc($index * 3)
 
 header
-  @include headers(3, rgba($mieleBlack, 1), $mieleWhite, fixed)
+  @include headers(3, rgba($mieleBlack, .9), $mieleWhite, fixed)
   backdrop-filter: blur(5px)
 
 footer
@@ -85,7 +89,7 @@ header
         font-weight: 500
 
     a
-      @include links(2, .5, 1.5, $mieleRed, $mieleWhite)
+      @include links(calc($index * 2), .5, 1.5, $mieleRed, $mieleWhite)
       border: calc($index * .1) solid $mieleRed
       font-weight: 700
 
@@ -171,7 +175,7 @@ footer
       @include images(17.5, 0, 0)
 
     .call-btn
-      @include links(2, 1, 5, $mieleRed, $mieleWhite)
+      @include links(calc($index * 2), 1, 5, $mieleRed, $mieleWhite)
       border: calc($index * .1) solid $mieleRed
       margin-bottom: calc($index * 5)
 
@@ -309,7 +313,7 @@ section
     height: auto
     justify-content: start
     grid-template-columns: repeat(3, 32%)
-    gap: calc($index * 2) 2%
+    gap: calc($index * 1) 2%
     //border: calc($index * .1) solid $mieleRed
     margin-top: calc($index * 1)
     //padding: calc($index * 1)
@@ -322,6 +326,11 @@ section
       height: auto
       background: $mieleDarkWhite
       overflow: hidden
+      border-radius: calc($index * .25)
+      transition-duration: $transitionDuration
+      transition-timing-function: $transitionTimingFunction
+      &:hover
+        border-radius: calc($index * .5)
       img
         @include images(10, 0, 0)
         object-fit: cover
@@ -357,6 +366,50 @@ section
         font-weight: 500
 
 #faq
+  display: flex
+  flex-direction: column
+  justify-content: start
   .container
     display: flex
     flex-direction: column
+    height: 100%
+    justify-content: space-between
+    .faq-item
+      display: flex
+      flex-direction: row
+      height: 90vh
+      width: 100%
+      justify-content: center
+      align-items: center
+      &:nth-child(2n)
+        flex-direction: row-reverse
+        .container
+          align-items: end
+          text-align: right
+      .container
+        justify-content: center
+        align-items: start
+        width: 55%
+        text-align: left
+        h5
+          color: $mieleRed
+          text-align: left
+        p
+          margin-bottom: calc($index * 1)
+        a
+          @include links(calc($index * 2), .5, 1.5, $mieleRed, $mieleWhite)
+          border: calc($index * .1) solid $mieleRed
+          i
+            transition-duration: inherit
+            transition-timing-function: inherit
+            margin-left: calc($index * .25)
+          &:hover i
+            margin-left: calc($index * .5)
+        &:first-child
+          width: 45%
+          padding: calc($index * 5)
+        &:nth-child(2)
+          img
+            width: 100%
+            height: 75%
+            object-fit: cover

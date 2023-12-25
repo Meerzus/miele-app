@@ -2,12 +2,20 @@ import rocket from '../Images/SVGs/Rocket.svg'
 import document from '../Images/SVGs/Document.svg'
 import percent from '../Images/SVGs/Percent.svg'
 
+import dollar from '../Images/SVGs/Dollar_Sign.svg'
+import bulb from '../Images/SVGs/Light_Bulb.svg'
+import stop from '../Images/SVGs/Stop_Sign.svg'
+
 import bannerImage from '../Images/MieleBanner.png'
 
 import service_1 from '../Images/Appliances/Services/1.webp'
 import service_2 from '../Images/Appliances/Services/2.jpg'
 import service_3 from '../Images/Appliances/Services/3.jpg'
 import service_4 from '../Images/Appliances/Services/4.jpg'
+
+import faq_1 from '../Images/FAQ/1.jpg'
+import faq_2 from '../Images/FAQ/2.jpg'
+import faq_3 from '../Images/FAQ/2.jpg'
 
 const appData = [
     {
@@ -19,19 +27,39 @@ const appData = [
             {
                 'id': '1',
                 'icon': rocket,
-                'name': 'СКОРОСТЬ РАБОТЫ',
+                'name': 'Скорость работы',
                 'description': 'Выезд за 1 час, ремонтируем в день выезда.',
             },
             {
                 'id': '2',
                 'icon': document,
-                'name': 'ГАРАНТИЯ',
+                'name': 'Гарантия',
                 'description': 'Даем гарантию на свои работы и запчасти до 24 месяцев.',
             },
             {
                 'id': '3',
                 'icon': percent,
-                'name': 'СКИДКА',
+                'name': 'Скидка',
+                'description': 'Оставьте отзыв - получите скидку 5%!',
+            },
+        ],
+        'guarantee': [
+            {
+                'id': '1',
+                'icon': dollar,
+                'name': 'Материальная ответственность',
+                'description': 'Выезд за 1 час, ремонтируем в день выезда.',
+            },
+            {
+                'id': '2',
+                'icon': bulb,
+                'name': 'Полная осведомленность',
+                'description': 'Даем гарантию на свои работы и запчасти до 24 месяцев.',
+            },
+            {
+                'id': '3',
+                'icon': stop,
+                'name': 'Без переплат',
                 'description': 'Оставьте отзыв - получите скидку 5%!',
             },
         ],
@@ -415,7 +443,24 @@ const appData = [
                 'year': '2023',
                 'review': 'Отличный добрый и отзывчивый сервис. Мастера золотые руки. Умеют всё. Выехали в день заказа. Работу сделали под ключ дома. Рекомендую!',
             },
-        ]
+        ],
+        'faq': [
+            {
+                'question': 'Как получить скидку?',
+                'answer': 'Чтобы получить скидку, достаточно воспользоваться нашими услугами в первый раз и оставить отзыв, на следующий вызов за вами автоматически закрепится скидка в 5%!',
+                'image': faq_1,
+            },
+            {
+                'question': 'Как получить гарантию?',
+                'answer': 'После проведения ремонтных работ сотрудник выдает вам гарантийный талон с гарантией от 6 до 24 месяцев.',
+                'image': faq_2,
+            },
+            {
+                'question': 'Как получить гарантию?',
+                'answer': 'После проведения ремонтных работ сотрудник выдает вам гарантийный талон с гарантией от 6 до 24 месяцев.',
+                'image': faq_3,
+            },
+        ],
     }
 ]
 

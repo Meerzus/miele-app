@@ -6,7 +6,7 @@ function Lines({color}) {
 
     const ref = useRef(null)
 
-    const isInView = useInView(ref, { once: true })
+    const isInView = useInView(ref, { once: false })
 
     return (
         <div className="lines">

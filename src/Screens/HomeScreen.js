@@ -63,9 +63,12 @@ function HomeScreen() {
             <section id='faq'>
                 <small style={{color: 'rgb(190, 38, 76)', marginBottom: 'calc((1vw + 1vh) * -.5)'}}>FAQ</small>
                 <h2 style={{marginTop: '0'}}>ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ</h2>
-                <div className="container">
-                    <FAQ/>
-                    <FAQ/>
+                <div className="container" style={{minHeight: `calc(90vh * ${data.faq.length})`}}>
+                    {
+                        data.faq.map((item, i) => {
+                            return <FAQ data={item} key={i}/>
+                        })
+                    }
                 </div>
             </section>
 
