@@ -417,9 +417,6 @@ section .lines {
 section .lines hr:first-child {
   height: calc((1vw + 1vh) * 0.25);
   width: 1%;
-  color: rgb(190, 38, 76);
-  fill: rgb(190, 38, 76);
-  background: rgb(190, 38, 76);
   border: none;
   transition-duration: 1s;
   transition-timing-function: cubic-bezier(0.2, 0.5, 0, 1);
@@ -427,9 +424,6 @@ section .lines hr:first-child {
 section .lines hr:last-child {
   height: calc((1vw + 1vh) * 0.25);
   width: 98%;
-  color: rgb(190, 38, 76);
-  fill: rgb(190, 38, 76);
-  background: rgb(190, 38, 76);
   border: none;
   transition-duration: 1s;
   transition-timing-function: cubic-bezier(0.2, 0.5, 0, 1);
@@ -554,6 +548,11 @@ section .appliances .appliance {
   color: rgb(31, 31, 31);
   font-size: calc((1vw + 1vh) * 0.6);
   font-weight: 500;
+}
+
+#faq .container {
+  display: flex;
+  flex-direction: column;
 }
 
 /*# sourceMappingURL=index.css.map */

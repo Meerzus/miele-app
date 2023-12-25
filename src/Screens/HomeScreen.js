@@ -38,7 +38,7 @@ function HomeScreen() {
 
             <section id='appliances'>
                 <h2>МЫ РЕМОНТИРУЕМ</h2>
-                <Lines/>
+                <Lines color={'rgb(190, 38, 76)'}/>
                 <div className="container" ref={ref} style={{minHeight: `calc(100vh * ${data.appliances.length})`}}>
                     <div className="appliances">
                         {data.appliances.map((appliance, i) => {
@@ -52,7 +52,7 @@ function HomeScreen() {
                     </div>
                 </div>
                 <h2>ПРИМЕРЫ РАБОТ</h2>
-                <Lines/>
+                <Lines color={'rgb(190, 38, 76)'}/>
                 <div className="services">
                     {data.appliances.map((service) => {
                         return <ServiceCard data={service.services[0]} service={service}/>
@@ -60,10 +60,11 @@ function HomeScreen() {
                 </div>
             </section>
 
-            <section>
+            <section id='faq'>
                 <small style={{color: 'rgb(190, 38, 76)', marginBottom: 'calc((1vw + 1vh) * -.5)'}}>FAQ</small>
                 <h2 style={{marginTop: '0'}}>ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ</h2>
                 <div className="container">
+                    <FAQ/>
                     <FAQ/>
                 </div>
             </section>
