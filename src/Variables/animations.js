@@ -25,7 +25,7 @@ export const verticalAppearance = {
 export const horizontalAppearance = {
     initialX: {
         opacity: 0,
-        x: -100,
+        x: -500,
     },
 
     animateX: {

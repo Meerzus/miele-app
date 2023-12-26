@@ -1,8 +1,22 @@
 import React from 'react';
 
+import {motion} from "framer-motion";
+import {transition, verticalAppearance} from "../Variables/animations";
+
 function Advantages({data}) {
     return (
-        <div className='advantages'>
+        <motion.div className='advantages'
+                    variants={verticalAppearance}
+                    initial='initialY'
+                    animate='animateY'
+                    transition={{
+                        // ...transition,
+                        type: 'linear',
+                        delay: .25,
+                        duration: 2,
+                        staggerChildren: .2,
+                    }}
+        >
             <h5>
                 <span>НАШИ</span>
                 <span>ПРЕИМУЩЕСТВА</span>
@@ -15,7 +29,7 @@ function Advantages({data}) {
                 </div>
             })}
             {/*<img src={data.advantages[0].icon} alt=""/>*/}
-        </div>
+        </motion.div>
     );
 }
 

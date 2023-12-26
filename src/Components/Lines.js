@@ -6,7 +6,7 @@ function Lines({color}) {
 
     const ref = useRef(null)
 
-    const isInView = useInView(ref, { once: false })
+    const isInView = useInView(ref, { once: true })
 
     return (
         <div className="lines">
@@ -17,8 +17,8 @@ function Lines({color}) {
                        transition={{
                            ...transition,
                            type: 'linear',
-                           delay: 10,
-                           duration: 50,
+                           delay: 1,
+                           duration: 5,
                        }}
             />
             <motion.hr ref={ref}
@@ -28,8 +28,8 @@ function Lines({color}) {
                        transition={{
                            ...transition,
                            type: 'linear',
-                           delay: 10,
-                           duration: 50,
+                           delay: 1,
+                           duration: 5,
                        }}
             />
         </div>

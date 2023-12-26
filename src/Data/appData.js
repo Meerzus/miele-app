@@ -8,6 +8,11 @@ import stop from '../Images/SVGs/Stop_Sign.svg'
 
 import bannerImage from '../Images/MieleBanner.png'
 
+import fridge from '../Images/Appliances/fridge.png'
+import washer from '../Images/Appliances/washer.png'
+import dishwasher from '../Images/Appliances/dishwasher.png'
+import plate from '../Images/Appliances/plate.png'
+
 import service_1 from '../Images/Appliances/Services/1.webp'
 import service_2 from '../Images/Appliances/Services/2.jpg'
 import service_3 from '../Images/Appliances/Services/3.jpg'
@@ -42,8 +47,10 @@ const appData = [
                 [60.011978, 29.706870],
             ],
         },
-        'phoneNumber': '79320100169',
-        'email': 'service-miele-spb.ru@wordpress.com',
+        'phoneNumber': '79939848582',
+        'email': 'igor.guba96@yandex.ru',
+        'fio': 'Губа Михаил Георгиевич',
+        'inn': '233701416399',
         'bannerImage': bannerImage,
         'advantages': [
             {
@@ -89,7 +96,7 @@ const appData = [
             {
                 'id': '1',
                 'type': 'Холодильники',
-                'image': '',
+                'image': fridge,
                 'slug': 'remont-holodilnikov-miele',
                 'service': 'холодильников',
                 'product_models': [
@@ -173,7 +180,7 @@ const appData = [
             {
                 'id': '2',
                 'type': 'Стиральные машины',
-                'image': '',
+                'image': washer,
                 'slug': 'remont-stiralnyh-mashin-miele',
                 'service': 'стиральных машин',
                 'product_models': [
@@ -257,7 +264,7 @@ const appData = [
             {
                 'id': '3',
                 'type': 'Посудомоечные машины',
-                'image': '',
+                'image': dishwasher,
                 'slug': 'remont-posudomoechnyh-mashin-miele',
                 'service': 'посудомоечных машин',
                 'product_models': [
@@ -341,7 +348,7 @@ const appData = [
             {
                 'id': '4',
                 'type': 'qweqweqwe',
-                'image': '',
+                'image': plate,
                 'slug': 'remont-holodilnikov-miele',
                 'service': 'холодильников',
                 'product_models': [

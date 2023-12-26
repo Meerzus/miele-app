@@ -2,7 +2,7 @@ import React, {useEffect, useState, useRef} from 'react';
 
 import Banner from "../Components/Banner";
 import ApplianceCard from "../Components/ApplianceCard";
-import ServiceCard from "../Components/ServiceCard";
+import Services from "../Components/Services";
 import Lines from "../Components/Lines";
 import FAQ from "../Components/FAQ";
 import Guarantee from "../Components/Guarantee";
@@ -12,7 +12,7 @@ import YMap from "../Components/YMap";
 import appData from "../Data/appData";
 
 import {motion, useAnimation, inView, useInView, useTransform, useScroll} from 'framer-motion'
-import {transition} from "../Variables/animations";
+import {horizontalAppearance, transition} from "../Variables/animations";
 import applianceCard from "../Components/ApplianceCard";
 import teamCard from "../Components/TeamCard";
 
@@ -30,6 +30,7 @@ function HomeScreen() {
     const data = appData.find((Data) => Data.city.toUpperCase() === city.toUpperCase())
 
     let x = useTransform(scrollYProgress, [0, 1], ["0%", `${(data.appliances.length * -102.5) + 102.5}%`])
+    let aX = useTransform(scrollYProgress, [0, 1], ["10%", `-10%`])
 
     useEffect(() => {
         // window.scrollTo({top: 0, left: 0, behavior: 'smooth'})
@@ -37,7 +38,7 @@ function HomeScreen() {
 
     return (
         <div id='homeScreen'>
-            <section>
+            <section style={{marginBottom: 'calc((1vw + 1vh) * 2)'}}>
                 <Banner data={data}/>
             </section>
 
@@ -58,11 +59,7 @@ function HomeScreen() {
                 </div>
                 <h2>ПРИМЕРЫ РАБОТ</h2>
                 <Lines color={'rgb(190, 38, 76)'}/>
-                <div className="services">
-                    {data.appliances.map((service, i) => {
-                        return <ServiceCard data={service.services[0]} service={service} key={i}/>
-                    })}
-                </div>
+                <Services data={data}/>
             </section>
 
             <section id='faq'>
