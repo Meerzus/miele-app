@@ -1,5 +1,5 @@
 import React, {useRef} from 'react';
-import {YMaps, Map, GeoObject, Placemark} from "@pbe/react-yandex-maps";
+import {YMaps, Placemark, Map, GeoObject} from "@pbe/react-yandex-maps";
 
 import {motion, useInView} from "framer-motion";
 import {transition} from "../Variables/animations";

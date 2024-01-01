@@ -1020,4 +1020,26 @@ input[type=number] {
   margin-bottom: calc((1vw + 1vh) * 1);
 }
 
+.go-up {
+  display: flex;
+  position: fixed;
+  bottom: calc((1vw + 1vh) * 1);
+  left: calc((1vw + 1vh) * 1);
+  border: calc((1vw + 1vh) * 0.1) solid rgb(31, 31, 31);
+  background: rgb(31, 31, 31);
+  color: rgb(249, 250, 244);
+  font-size: calc((1vw + 1vh) * 0.5);
+  padding: calc((1vw + 1vh) * 0.75) calc((1vw + 1vh) * 0.75);
+  transition-duration: 1s;
+  transition-timing-function: cubic-bezier(0.2, 0.5, 0, 1);
+  border-radius: 100%;
+  cursor: pointer;
+  z-index: 9999;
+}
+.go-up:hover {
+  background: transparent;
+  color: rgb(190, 38, 76);
+  border: calc((1vw + 1vh) * 0.1) solid rgb(190, 38, 76);
+}
+
 /*# sourceMappingURL=index.css.map */

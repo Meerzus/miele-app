@@ -691,3 +691,24 @@ input[type=number]
     margin-bottom: calc($index * .5)
   p
     margin-bottom: calc($index * 1)
+
+
+.go-up
+  display: flex
+  position: fixed
+  bottom: calc($index * 1)
+  left: calc($index * 1)
+  border: calc($index * .1) solid $mieleBlack
+  background: $mieleBlack
+  color: $mieleWhite
+  font-size: calc($index * .5)
+  padding: calc($index * .75) calc($index * .75)
+  transition-duration: $transitionDuration
+  transition-timing-function: $transitionTimingFunction
+  border-radius: 100%
+  cursor: pointer
+  z-index: 9999
+  &:hover
+    background: transparent
+    color: $mieleRed
+    border: calc($index * .1) solid $mieleRed

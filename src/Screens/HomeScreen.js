@@ -33,7 +33,7 @@ function HomeScreen() {
     let aX = useTransform(scrollYProgress, [0, 1], ["10%", `-10%`])
 
     useEffect(() => {
-        // window.scrollTo({top: 0, left: 0, behavior: 'smooth'})
+        window.scrollTo({top: 0, left: 0, behavior: 'smooth'})
     }, [])
 
     return (

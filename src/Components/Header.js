@@ -27,13 +27,20 @@ function Header() {
                 <motion.img variants={verticalAppearance} src={require('../Images/MieleLogo.png')} alt="" onClick={() => navigate('/')}/>
                 <nav>
                     <motion.button onClick={() => navigateTo('appliances')} variants={verticalAppearance}>
-                        Виды техники</motion.button>
+                        Виды техники
+                    </motion.button>
 
                     <motion.button onClick={() => navigateTo('faq')} variants={verticalAppearance}>
-                        Гарантии</motion.button>
+                        Гарантии
+                    </motion.button>
 
                     <motion.button onClick={() => navigateTo('map')} variants={verticalAppearance}>
-                        Контакты</motion.button>
+                        Контакты
+                    </motion.button>
+
+                    <motion.button onClick={() => navigate('/')} variants={verticalAppearance}>
+                        Каталог устройств
+                    </motion.button>
                 </nav>
                 <motion.a variants={verticalAppearance} href="tel:+71234567890">Звонок бесплатный</motion.a>
             </motion.div>
